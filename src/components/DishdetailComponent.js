@@ -57,6 +57,7 @@ class DishDetail extends Component {
   }
 
   render() {
+    console.log(`Dish: ${this.props.dish}`);
     return (
       <>
         <div className="cardInfo p-5">
