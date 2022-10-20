@@ -16,9 +16,9 @@ class Main extends Component {
     super(props);
     this.state = {
       dishes: DISHES,
-      commments: COMMENTS,
-      leaders: LEADERS,
+      comments: COMMENTS,
       promotions: PROMOTIONS,
+      leaders: LEADERS,
     };
   }
 
@@ -33,6 +33,21 @@ class Main extends Component {
       );
     };
 
+    const DishWithId = ({ match }) => {
+      return (
+        <DishDetail
+          dish={
+            this.state.dishes.filter(
+              (dish) => dish.id === parseInt(match.params.dishId, 10)
+            )[0]
+          }
+          comments={this.state.comments.filter(
+            (comment) => comment.dishId === parseInt(match.params.dishId, 10)
+          )}
+        />
+      );
+    };
+
     return (
       <div className="App">
         <Header />
@@ -43,6 +58,7 @@ class Main extends Component {
             path="/menu"
             component={() => <Menu dishes={this.state.dishes} />}
           />
+          <Route path="/menu/:dishId" component={DishWithId} />
           <Route exact path="/contactus" component={Contact} />
           <Redirect to="/home" />
         </Switch>
