@@ -13,24 +13,15 @@ import { Link } from "react-router-dom";
 function RenderDish({ dish }) {
   console.log(`Dish: ${dish}`);
   return (
-    <>
-      <div className="cardInfo p-5">
-        <div className="row">
-          <div className="col-12 col-md-5">
-            <Card>
-              <CardImg width="100%" src={dish.image} alt={dish.name} />
-              <CardBody>
-                <CardTitle>{dish.name}</CardTitle>
-                <CardText>{dish.description}</CardText>
-              </CardBody>
-            </Card>
-          </div>
-          <div className="col-12 col-md-5 border border-primary">
-            <RenderComments comments={dish.comments} />
-          </div>
-        </div>
-      </div>
-    </>
+    <div className="col-12 col-md-5 md-1">
+      <Card>
+        <CardImg width="100%" src={dish.image} alt={dish.name} />
+        <CardBody>
+          <CardTitle>{dish.name}</CardTitle>
+          <CardText>{dish.description}</CardText>
+        </CardBody>
+      </Card>
+    </div>
   );
 }
 
