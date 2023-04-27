@@ -26,44 +26,6 @@ function RenderDish({ dish }) {
   );
 }
 
-/* function RenderComments({ comments }) {
-  if (comments != null) {
-    let commentDetails = comments.map((comment) => {
-      let options = {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      };
-      let commentDate = new Date(comment.date);
-      let fmtDate = commentDate.toLocaleDateString("en-US", options);
-      return (
-        <>
-          <ul key={comment.id} className="list-unstyled">
-            <li>
-              <div>{comment.comment}</div>
-            </li>
-            <li>
-              <div>
-                -- {comment.author}, {fmtDate}
-              </div>
-            </li>
-          </ul>
-        </>
-      );
-    });
-
-    return (
-      <div className="container">
-        <h4>Comments</h4>
-        <div className="row">{commentDetails}</div>
-      </div>
-    );
-  } else {
-    return <div></div>;
-  }
-} */
-
 function RenderComments({ comments }) {
   if (comments != null)
     return (
